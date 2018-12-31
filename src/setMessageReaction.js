@@ -49,7 +49,6 @@ module.exports = function(defaultFuncs, api, ctx) {
         break;
       default:
         return callback({ error: "Reaction is not a valid emoji." });
-        break;
     }
 
     var variables = {
@@ -70,7 +69,7 @@ module.exports = function(defaultFuncs, api, ctx) {
 
     defaultFuncs
       .postFormData(
-        "https://www.messenger.com/webgraphql/mutation/",
+        "https://www.facebook.com/webgraphql/mutation/",
         ctx.jar,
         {},
         qs

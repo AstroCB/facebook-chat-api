@@ -35,12 +35,12 @@ module.exports = function(defaultFuncs, api, ctx) {
 
     let i = 0;
     for (let u of adminIDs) {
-      form[`admin_ids[${i++}]`] = u
+      form[`admin_ids[${i++}]`] = u;
     }
     form["add"] = adminStatus;
 
     defaultFuncs
-      .post("https://www.messenger.com/messaging/save_admins/?dpr=1", ctx.jar, form)
+      .post("https://www.facebook.com/messaging/save_admins/?dpr=1", ctx.jar, form)
       .then(utils.parseAndCheckLogin(ctx, defaultFuncs))
       .then(function(resData) {
         if (resData.error) {
